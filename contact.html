@@ -1,0 +1,105 @@
+<!-- A contact form with only HTML and CSS elements -->
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title> Contact Form</title>
+    <link rel="stylesheet" href="stylesheet.css" />
+    <link rel="navbar" href="navbar.html" />
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Welcome</a>
+            <a href="about.html">About Me</a>
+            <a href="cv.html">CV</a>
+            <a href="gallery.html">Photo Gallery</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <form>
+                <fieldset>
+                    <legend>Contact Me</legend>
+
+                    <!-- Here I collect personal information. The first two input fields are set to required-->
+                    <fieldset>
+                        <div class="names">
+                            <div class="fname">
+                                <!-- I'm using for-attribute to associate the labels to their respective inputs -->
+                                <label for="fname">First Name*</label>
+                                <input type="text" id="fname" size="25" maxlength="30" required />
+
+                            </div>
+                            <div class="lname">
+                                <label for="lname">Last Name*</label>
+                                <input type="text" id="lname" size="25" maxlength="30" required />
+                            </div>
+                        </div>
+                    </fieldset>
+
+
+                    <!-- Here I collect contact information. -->
+                    <!-- HOW TO MAKE ONLY ONE OF THEM REQUIRED?  -->
+                    <fieldset>
+                        <div class="phone-email">
+                            <div>
+                                <label for="email-address">Email*</label>
+                                <!-- Adding the type "email" to make sure it's an email that's being submitted -->
+                                <input type="email" id="email-address" size="25" maxlength="30" required />
+                            </div>
+                            <div>
+                                <label for="phone-number">Phone Number <i>(optional)</i></label>
+                                <!-- type="tel" doesn't seem to work in edge -->
+                                <input type="tel" id="phone-number" size="25" maxlength="40" />
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- <div> -->
+                    <fieldset>
+                        <label>Your Message:</label>
+                        <textarea placeholder="Write your message here..." required></textarea>
+                    </fieldset>
+                    <!-- </div> -->
+
+                    <!-- Let's not forget about giving people a chance to choose how they want to be contacted-->
+                    <div class="contact-method">
+                        <fieldset>
+                            <p>Preferred method for contact:</p>
+                            <div>
+                                <!-- Added checked attribute, to give a visual cue for the user that email will be the default option-->
+                                <label for="email"><input type="radio" id="email" name="contact-method" checked />
+                                    E-Mail</label>
+
+                            </div>
+                            <!-- Added the name="contact-methond" so that only one of them can be selected -->
+                            <label for="phonecall">
+                                <input type="radio" id="phonecall" name="contact-method" />
+                                Phone Call
+                            </label>
+
+                            <label for="sms"><input type="radio" id="sms" name="contact-method" /> SMS</label>
+
+                        </fieldset>
+                    </div>
+
+                    <!-- <div> -->
+                    <fieldset>
+                        <label><input type="checkbox" /> Send a copy to my e-mail</label>
+                    </fieldset>
+                    <!-- </div> -->
+                    <!-- Which of these buttons?? -->
+                    <input type="submit" value="Send" id="submit"/>
+                    <!-- <button>Submit</button> -->
+                </fieldset>
+            </form>
+        </section>
+    </main>
+    <footer> </footer>
+</body>
+
+</html>

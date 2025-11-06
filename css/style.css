@@ -4,8 +4,6 @@ legend {
     font-weight: bolder;
     font-style: oblique;
     font-size: 32px;
-    /* margin-left: 15px; */
-    /* margin-top: 15px; */
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 0;
@@ -69,7 +67,7 @@ fieldset:last-of-type {
 form {
     margin: 0 auto;
     max-width: 600px;
-    min-width: 300px;
+    min-width: 500px;
     border: 2px solid rgba(202, 254, 255, 0.76);
     display: flex;
     flex-direction: column;
@@ -77,6 +75,11 @@ form {
     background-color: rgba(28, 102, 115, 0.719);
     color: #ebfeff;
     border-color: #ebfeff;
+}
+
+.form-responsive {
+    max-width: 600px;
+    width: 100%;
 }
 
 form input,
@@ -135,8 +138,8 @@ nav a {
 
 nav a:hover {
     background-color: rgb(145, 223, 231);
-    font-weight: bolder; 
-    font-size: larger; 
+    font-weight: bolder;
+    font-size: larger;
     /* Below is another way to do this*/
     /* transform: scale(1.1); */
 }
@@ -165,60 +168,181 @@ html {
 
 
 /* GALLERY GALLERY GALLERY */
+/* First I had Grid, then changed to Flexbox */
 .gallery {
-    margin-left: 10%;
-    margin-right: 10%;
-    max-width: 600px;
-    min-width: 300px;
-    width: 300px;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    column-gap: 10px;
-    justify-content: start;
-
-    
-    /*
-    border: 1px dashed rgb(221, 0, 255);
-    width: 600px; 
-    */
-    /* align-items: center;
-    align-items: stretch; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.gallery div {
-    display: grid;
-    /* justify-content: center; */
+.gallery-item {
     padding: 5px;
     margin: 8px;
-    width: inherit;
-    max-width: inherit;
-    min-width: inherit;
+    width: calc(25% - 30px);
 }
 
 .gallery div img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border:#001ba1 1px solid;
+    border: #001ba1 1px solid;
 }
-
 
 
 /* When hovering over one image, it zooms also the descenders of it. Way to fix it?? */
-.gallery div:hover{
-    border:#ffffff 2px solid;
-    transform: scale(1.5);
+.gallery div:hover {
+    border: #ffffff 2px solid;
+    transform: scale(1.2);
 }
 
-.responsive {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
+/* I followed the W3Schools */
+@media only screen and (max-width:768px) {
+    .gallery-item {
+        width: calc(50% - 30px);
+    }
 }
-/*
-section .gallery{
-    margin-left: 0 auto;
-    max-width: 600px;
-    min-width: 300px;
-    border:rgb(4, 249, 0) 1pc solid;
-} */
+
+@media only screen and (max-width: 480px) {
+    .gallery-item {
+        width: calc(25% - 10px)
+    }
+}
+
+/* ABOUT ME ABOUT ME ABOUT ME*/
+.sectionOneContainer {
+    display: flex;
+    /* align-items: left; */
+}
+
+#description {
+    /* background-color: #3e89bea7; */
+    padding: 5px;
+    /* height:fit-content  */
+}
+
+#about-body {
+    margin: 0 auto;
+    width: 80%;
+    display: grid;
+    justify-content: center;
+    border: 2px rgba(6, 6, 152, 0.386) dashed;
+    font-size: larger;
+}
+
+#about-body h1 {
+    margin-left: 50px;
+}
+
+#profile-picture {
+    margin: 20px;
+    margin-top: 100px;
+    padding: 25px;
+    background-color: #3477b6fb;
+    height: 5%;
+}
+
+.about-list li {
+    padding: 25px;
+    margin-left: 10px;
+    background-color: #3e89bea7;
+    list-style: inside circle;
+
+}
+
+.wishlist {
+    list-style-image: url("Images/gift-icon.png");
+    list-style-position: inside;
+    background-color: #98d0dc;
+    padding: 10px;
+}
+
+.artists {
+    list-style-image: url("Images/music-icon.png");
+    list-style-position: inside;
+    background-color: #426a8a7f;
+    padding: 12px;
+}
+
+.lists {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+    margin: 20px;
+}
+
+
+/* CV CV CV CV CV*/
+.cv {
+    margin: 0 auto;
+    width: 80%;
+    padding: 15px;
+    /* display: grid; */
+    /* justify-content: center; */
+    border: 2px rgba(6, 6, 152, 0.386) dashed;
+}
+
+.cv section {
+    border-bottom: 1px dashed gray;
+}
+
+.cv h1 {
+    text-decoration: underline overline;
+    font-size: xx-large;
+    text-align: center;
+}
+
+.cv h2 {
+    padding: 0 auto;
+    font-size: large;
+    text-align: center;
+}
+
+.cv h3 {
+    font-size: larger;
+    text-decoration: underline;
+}
+
+.cv section:last-child {
+    border-bottom: none;
+}
+
+.technical-skills {
+    color: black;
+    border-top: 1px dashed gray;
+}
+
+.experience {
+    color: black;
+}
+
+.education {
+    color: black;
+}
+
+.hobbies {
+    color: black;
+}
+
+.languages {
+    color: black;
+}
+
+/* WELCOME PAGE WELCOME PAGE WELCOME PAGE*/
+.welcome-page {
+    background-image: url('/Images/panorama2.JPG');
+    height: 410px;
+    background-repeat: repeat;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    align-content: center;
+    font-size:large;
+}
+.welcome-page p, h1{
+    background-color: #001ba16e
+}
+
+footer{
+    text-align: center;
+    
+}
